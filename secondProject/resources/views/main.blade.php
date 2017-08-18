@@ -3,11 +3,11 @@
 
 @section('content')
 
-<form action="auth/login" method="get">
+<form action="login" method="get">
     <input type="submit" value="Login" />    
 </form>
 
-<form action="auth/register" method="get">
+<form action="register" method="get">
     <input type="submit" value="Register" />    
 </form>
 
@@ -15,7 +15,7 @@
     <input type="submit" value="Tasks" />    
 </form>
 
-<form action="tasks" method="get">
+<form action="logout" method="get">
     <input type="submit" value="Quit" />    
 </form>
 @endsection

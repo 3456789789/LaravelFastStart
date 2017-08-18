@@ -20,16 +20,16 @@ Route::get('/', function () {
 /**
  * Маршруты регистрации
  */
-Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
-Route::post('auth/register', 'Auth\RegisterController@register');
 
-//Auth::routes();
+Auth::routes();
+Route::get('logout', function () {
+  Auth::logout();
+return redirect('main');
+});
+Route::post('logout', 'Auth\LoginController@logout');
 
-Route::get('auth/login', 'Auth\LoginController@showLoginForm');
-Route::post('auth/login', 'Auth\LoginController@login');
-Route::get('auth/logout', 'Auth\LoginController@logout');
 
-Route::get('/tasks', 'TaskController@index');
+Route::get('/tasks', 'TaskController@all');
 Route::post('/task', 'TaskController@store');
 Route::delete('/task/{task}', 'TaskController@destroy');
 

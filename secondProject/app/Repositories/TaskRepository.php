@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Task;
 use App\User;
 
 class TaskRepository
@@ -17,5 +18,10 @@ class TaskRepository
     return $user->tasks()
         ->orderBy('created_at', 'asc')
         ->get();
+  }
+  public function all()
+  {
+      $tasks=Task::all();
+      return $tasks;
   }
 }

@@ -24,6 +24,12 @@ class TaskController extends Controller
       'tasks' => $this->tasks->forUser($request->user()),
       ]);
   }
+   public function all(Request $request)
+  {
+      return view('tasks.all', [
+      'tasks' => $this->tasks->all(),
+      ]);
+  }
   public function store(Request $request)
   {
       $this->validate($request, [
